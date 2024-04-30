@@ -1,70 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visit West Bengal</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('img_sample_first_page.jpg');
-            background-size: cover;
-            background-position: center;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        position: sticky;
+        top: 0;
+      }
+      .normal-header {
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* semi-transparent black background */
+        color: #fff;
+      }
+      .small-header {
+        color: #000;
+        background-color: white;
+        font-size: 10px;
+        animation: header-animate 1s;
+      }
+      .small-header h1 {
+        text-align: left;
+      }
+      .container {
+        height: 100vh;
+      }
+      .main-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+        background-color: #ffc107; /* yellow color */
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        cursor: pointer;
+      }
+      a:hover {
+        background-color: #ffca28; /* lighter yellow color on hover */
+      }
+      .cont-btm {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+      }
+      .main-popup {
+        display: none;
+        position: fixed;
+        animation: animate;
+        animation-duration: 0.5s;
+        max-width: 800px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* semi-transparent white background */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+      }
+      .popup {
+        display: none;
+        height: 500px;
+        width: 40vw;
+        background-color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 100px 100px 0% 0%;
+        transform: translate(-50%, 0%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        animation: popup-animate 0.5s;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .places {
+        font-size: 25px;
+        margin: 15px;
+        background-color: #ffc107;
+        padding: 10px;
+        width: 350px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .places:hover {
+        transform: scale(1.2);
+        transition: .5s;
+      }
+      @keyframes popup-animate {
+        0% {
+          transform: translate(-50%, 100%);
         }
-        .popup{
-            display: none;
+        100% {
+          transform: translate(-50%, 0%);
         }
-        header {
-            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+      }
+      @keyframes animate {
+        0% {
+          transform: translate(-50%, 0%);
+          opacity: 0.2;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%);
         }
-        .main-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+      }
+      @keyframes header-animate {
+        0% {
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+          ); /* semi-transparent black background */
+          color: #fff;
         }
-        a {
-            color: #333;
-            text-decoration: none;
-            background-color: #ffc107; /* yellow color */
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
+        100% {
+          color: #000;
+          background-color: white;
+          font-size: 10px;
         }
-        a:hover {
-            background-color: #ffca28; /* lighter yellow color on hover */
-        }
+      }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to West Bengal Tourism</h1>
+  </head>
+  <body>
+    <header class="normal-header">
+      <h1>Welcome to West Bengal Tourism</h1>
     </header>
     <div class="container">
-        <img src="img_sample_first_page.jpg" alt="Prominent Tourist Place in West Bengal" class="main-image">
-        <p>Explore the beauty of West Bengal! Click below to learn more about different places to visit.</p>
+      <div class="main-popup">
+        <img
+          src="img_sample_first_page.jpg"
+          alt="Prominent Tourist Place in West Bengal"
+          class="main-image"
+        />
+        <p>
+          Explore the beauty of West Bengal! Click below to learn more about
+          different places to visit.
+        </p>
         <a onclick="toggle_popup()">Places to Visit</a>
+      </div>
     </div>
+
+    <!-- <div class="cont-btm"></div> -->
     <div class="popup">
-        <ol>
-            <li>hi this is a pop up</li>
-        </ol>
+      <div class="places">Kolkata</div>
+      <div class="places">Darjeeling</div>
+      <div class="places">Siliguri</div>
+      <div class="places">Shantiniketan</div>
     </div>
-    <script src="script.js">
-        
-    </script>
-</body>
+
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
 </html>
