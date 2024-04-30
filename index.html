@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit West Bengal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img_sample_first_page.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .popup{
+            display: none;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+            background-color: #ffc107; /* yellow color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #ffca28; /* lighter yellow color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to West Bengal Tourism</h1>
+    </header>
+    <div class="container">
+        <img src="img_sample_first_page.jpg" alt="Prominent Tourist Place in West Bengal" class="main-image">
+        <p>Explore the beauty of West Bengal! Click below to learn more about different places to visit.</p>
+        <a onclick="toggle_popup()">Places to Visit</a>
+    </div>
+    <div class="popup">
+        <ol>
+            <li>hi this is a pop up</li>
+        </ol>
+    </div>
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
