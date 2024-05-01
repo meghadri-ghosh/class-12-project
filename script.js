@@ -1,17 +1,20 @@
 const popup = document.querySelector(".popup");
-function toggle_popup() {
+const mainPopup = document.querySelector(".main-popup");
+const header = document.querySelector("header");
+
+
+function showPopup() {
     popup.classList.add("center");
 }
 
-const mainPopup = document.querySelector(".main-popup");
-const header = document.querySelector("header");
+
+
 function handleScroll(e) {
-  e.preventDefault();
-  //window.removeEventListener("wheel", handleScroll);
   mainPopup.style.display = "block";
-  header.classList.remove("header");
+  header.classList.remove("normal-header");
   header.classList.add("small-header");
 }
+
 function closePopup(){
   popup.classList.add("animate-reverse");
   setTimeout(() => {
