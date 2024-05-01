@@ -127,19 +127,24 @@
       .popup-close {
         width: 75%;
         text-align: right;
-        cursor: pointer;
+        
       }
       .animate-reverse {
-        animation: popup-animate-rev 0.4s;
+        animation: popup-animate-rev .5s;
+        animation-fill-mode: forwards;
+      }
+      .pointer {
+        cursor: pointer;
       }
       @keyframes popup-animate-rev {
         0% {
           transform: translate(-50%, 0%);
-          
+           opacity: 1;
         }
         100% {
           transform: translate(-50%, 100%);
-          
+          opacity: 0;
+          display: none;
         }
       }
       @keyframes popup-animate {
@@ -148,6 +153,7 @@
         }
         100% {
           transform: translate(-50%, 0%);
+         
         }
       }
       @keyframes animate {
@@ -199,8 +205,8 @@
 
     <!-- <div class="cont-btm"></div> -->
     <div class="popup">
-      <div class="popup-close" onclick="closePopup()">
-        <i class="fa-solid fa-square-xmark"></i>
+      <div class="popup-close">
+        <i class="pointer fa-solid fa-square-xmark" onclick="closePopup()"></i>
       </div>
       <div class="places"><a href="page1(kolkata).html">Kolkata</a></div>
       <div class="places"><a href="page2(darjeeling).html">Darjeeling</a></div>

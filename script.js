@@ -17,27 +17,10 @@ function closePopup(){
   setTimeout(() => {
     popup.classList.remove("animate-reverse");
     popup.classList.remove("center");
-  }, 400);
+  }, 500);
   
   
 }
 
 window.addEventListener("wheel", handleScroll);
 
-// const content_bottom = document.querySelector(".cont-btm");
-// let options = {
-//   root: content_bottom,
-//   rootMargin: "0px",
-//   threshold: 1.0,
-// };
-// function callback(e) {
-//   //e.preventDefault();
-//   //window.removeEventListener("wheel", handleScroll);
-//   mainPopup.style.display = "block";
-//   header.classList.remove("header");
-//   header.classList.add("small-header");
-// }
-
-// let observer = new IntersectionObserver(callback, options);
-
-// observer.observe(content_bottom);
